@@ -24,8 +24,6 @@ import static io.micronaut.http.MediaType.APPLICATION_JSON;
 public class TokenController {
     @Inject
     private DefaultHttpClient client;
-    @Value("${gcp.endpoint}")
-    private String endpoint;
 
     @Value("${gcp.region}")
     private String region;

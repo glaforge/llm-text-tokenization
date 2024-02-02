@@ -10,12 +10,13 @@ Enter your text, select a model, and see how it is tokenized!
 
 ## Models currently supported
 
+* `textembedding-gecko`
+* `textembedding-gecko-multilingual`
 * `text-bison`
 * `chat-bison`
-* `textembedding-gecko`
+* `code-gecko`
 * `code-bison`
 * `codechat-bison`
-* `code-gecko`
 
 ## Try it out!
 
