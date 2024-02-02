@@ -1,0 +1,7 @@
+[[build.env]]
+name = "GOOGLE_RUNTIME_VERSION"
+value = "17"
+
+[[build.env]]
+name = "GOOGLE_ENTRYPOINT"
+value = "java -jar /workspace/build/libs/text-tokenization-0.1-all-optimized.jar"
