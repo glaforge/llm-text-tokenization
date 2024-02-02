@@ -1,9 +1,15 @@
 # Visualize PaLM-based large language models and their tokenization
 
-With this application, you can better understand how PaLM-based large language models tokenize your text.
-Enter your text, select a model, and see how it is tokenized.
+With this application, you can better understand how 
+[PaLM-based large language models](https://cloud.google.com/vertex-ai/docs/generative-ai/language-model-overview) 
+tokenize your text.
 
-Models currently supported:
+Enter your text, select a model, and see how it is tokenized!
+
+![](tokenization-screenshot.png)
+
+## Models currently supported
+
 * `text-bison`
 * `chat-bison`
 * `textembedding-gecko`
