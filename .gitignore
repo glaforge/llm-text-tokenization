@@ -2,3 +2,7 @@
 /.gradle/
 /build/
 /build/classes/java/main/
+/src/main/main.iml
+/.idea/
+/src/test/test.iml
+**/.DS_Store
