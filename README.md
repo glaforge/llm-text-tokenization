@@ -13,6 +13,7 @@ Enter your text, select a model, and see how it is tokenized!
 * `textembedding-gecko`
 * `textembedding-gecko-multilingual`
 * `text-bison`
+* `text-unicorn`
 * `chat-bison`
 * `code-gecko`
 * `code-bison`
