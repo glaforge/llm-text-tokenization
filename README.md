@@ -10,6 +10,8 @@ Enter your text, select a model, and see how it is tokenized!
 
 ## Models currently supported
 
+* `text-embedding`
+* `text-multilingual-embedding`
 * `textembedding-gecko`
 * `textembedding-gecko-multilingual`
 * `text-bison`
