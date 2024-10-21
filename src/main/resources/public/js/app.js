@@ -13,7 +13,12 @@ async function tokenize() {
     submitBtn.disabled = true;
     tokensDiv.replaceChildren();
 
-    const response = await fetch("/tokens", {
+    let path = "/tokens";
+    if (model === "gemini") {
+        path += "/gemini";
+    }
+
+    const response = await fetch(path, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

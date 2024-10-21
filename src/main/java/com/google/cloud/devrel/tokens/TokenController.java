@@ -1,5 +1,6 @@
 package com.google.cloud.devrel.tokens;
 
+import ai.djl.sentencepiece.SpTokenizer;
 import com.google.auth.oauth2.GoogleCredentials;
 import io.micronaut.context.annotation.Value;
 import io.micronaut.core.annotation.NonNull;
@@ -14,9 +15,13 @@ import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
 import jakarta.inject.Inject;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 import static io.micronaut.http.MediaType.APPLICATION_JSON;
 
@@ -24,6 +29,9 @@ import static io.micronaut.http.MediaType.APPLICATION_JSON;
 public class TokenController {
     @Inject
     private DefaultHttpClient client;
+
+    @Inject
+    private GeminiTokenizerService geminiTokenizer;
 
     @Value("${gcp.region}")
     private String region;
@@ -53,5 +61,13 @@ public class TokenController {
             .contentType(APPLICATION_JSON);
 
         return client.toBlocking().exchange(request, Map.class).body();
+    }
+
+    @Post("/gemini")
+    @Produces(APPLICATION_JSON)
+    @Consumes(APPLICATION_JSON)
+    @ExecuteOn(TaskExecutors.BLOCKING)
+    public Map tokenizeGemini(@NonNull String prompt) throws IOException {
+        return geminiTokenizer.tokenize(prompt);
     }
 }

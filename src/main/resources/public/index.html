@@ -16,9 +16,17 @@
     <div class="row">
         <h1>Token visualizer</h1>
         <p>
-            This tool allows you to visualize the tokens of a text prompt or snippet, using the tokenization models of the various Google Cloud Vertex AI
-            <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning">large language models</a>.
+            This tool allows you to visualize the tokens of a text prompt, using
+            the <a href="https://deepmind.google/technologies/gemini/">Gemini</a> and <a href="https://ai.google.dev/gemma">Gemma</a> tokenizer
+            and the various embedding <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions#embeddings_stable_model_versions">models</a>
+            from Google Cloud <a href="https://cloud.google.com/vertex-ai/docs">Vertex AI.</a>
             Tokens are also counted, and hovering over them will indicate their internal IDs.
+        </p>
+        <p>
+            Note: The Gemini/Gemma tokenizer token IDs are not the real IDs as the library used in this application doesn't provide them,
+            but the <code>text-bison</code> embedding model uses the same vocabulary as the Gemini/Gemma tokenizer, and thus shows the right token IDs.
+        </p>
+        <p>
             The source code of this application is <a href="https://github.com/glaforge/llm-text-tokenization">available on Github</a>.
         </p>
     </div>
@@ -29,8 +37,10 @@
         <sl-textarea placeholder="Insert your prompt here" id="prompt" filled></sl-textarea>
     </div>
     <div class="row">
-        <sl-select id="model" value="text-embedding-004">
-            <small>STABLE</small>
+        <sl-select id="model" value="gemini">
+            <small>GEMINI & GEMMA</small>
+            <sl-option value="gemini">gemini</sl-option>
+            <small>EMBEDDING MODELS</small>
             <sl-option value="text-embedding-004">text-embedding</sl-option>
             <sl-option value="text-multilingual-embedding-002">text-multilingual-embedding</sl-option>
             <sl-option value="textembedding-gecko">textembedding-gecko</sl-option>
@@ -38,7 +48,6 @@
             <sl-option value="text-bison">text-bison</sl-option>
             <sl-option value="text-unicorn">text-unicorn</sl-option>
             <sl-option value="chat-bison">chat-bison</sl-option>
-            <small>CODEY</small>
             <sl-option value="code-bison">code-bison</sl-option>
             <sl-option value="code-gecko">code-gecko</sl-option>
             <sl-option value="codechat-bison">codechat-bison</sl-option>

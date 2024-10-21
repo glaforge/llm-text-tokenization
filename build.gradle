@@ -21,6 +21,7 @@ dependencies {
 
     implementation("io.micronaut:micronaut-http-client")
     implementation('com.google.auth:google-auth-library-oauth2-http:1.19.0')
+    implementation('ai.djl.sentencepiece:sentencepiece:0.30.0')
 }
 
 
