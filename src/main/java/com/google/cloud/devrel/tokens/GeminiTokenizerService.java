@@ -40,7 +40,7 @@ public class GeminiTokenizerService {
 
         LinkedHashMap<String, Object> tokensInfo = new LinkedHashMap<>();
         List<String> base64encodedTokens = tokens.stream()
-            .map(s -> Base64.getEncoder().encodeToString(s.replace("▁", " ").getBytes()))
+            .map(s -> Base64.getEncoder().encodeToString(s.replace("\u2581", " ").getBytes()))
             .toList();
         tokensInfo.put("tokens", base64encodedTokens);
         tokensInfo.put("tokenIds", tokens.stream()
